@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Te amo Luisa 💕💕</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: #ffebcd;
+        overflow: hidden;
+        font-family: "Arial", sans-serif;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        color: #ff69b4;
+        text-align: center;
+        margin-bottom: 20px;
+        animation: fadeIn 2s ease-in-out;
+      }
+
+      p {
+        font-size: 1.2rem;
+        color: #333;
+        text-align: center;
+        margin: 0 20px;
+        animation: slideIn 2s ease-in-out;
+      }
+
+      img.flower {
+        position: absolute;
+        width: 50px;
+        animation: float 5s infinite;
+        opacity: 0.8;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideIn {
+        from {
+          transform: translateY(-50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Te amo con todo mi corazón</h1>
+    <p>Sabia que dirias que si, eres muy especial para mi 💗</p>
+
+    <script>
+      function createFlower() {
+        const flower = document.createElement("img");
+        flower.src = "../img/foto2.jpeg";
+        flower.classList.add("flower");
+        flower.style.left = Math.random() * 100 + "vw";
+        flower.style.animationDuration = Math.random() * 3 + 2 + "s";
+        document.body.appendChild(flower);
+
+        setTimeout(() => {
+          flower.remove();
+        }, 5000);
+      }
+
+      setInterval(createFlower, 1500);
+    </script>
+  </body>
+</html>

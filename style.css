@@ -1,0 +1,121 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@700&family=Oswald:wght@200..700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    background: pink;
+    font-family: "Sour Gummy", sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.main-container {
+    text-align: center;
+    margin-top: 100px;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.img-container{
+    margin-bottom: 50px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+
+}
+
+h1, h2{
+    margin-bottom: 25px;
+    color: #ff00ec;
+    animation: slideIn 2s ease-in-out;
+}
+h2{
+    margin-top: 25px;
+    
+}
+p{
+    color: #7777;
+    font-size: 25px;
+    animation: slideIn 2s ease-in-out;
+}
+
+button {
+    font-size: 2vw;
+    margin: 10px;
+    padding: 1vw; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease; 
+    animation: slideIn 2s ease-in-out;
+}
+
+.btn1, .btn2{
+    font-size: 40px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.btn1:hover, .btn2:hover{
+    transform: scaleY(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    transform: rotate(5deg);
+    color: #fff;
+}
+
+.btn1:active, .btn2:active{
+    transform: scale(0.95);
+}
+
+
+h3{
+    display: none;
+}
+
+
+
+
+
+@keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }

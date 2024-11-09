@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Para mi Amor</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main-container">
+          <img class="img-container" src="img/foto1.jpeg" alt="imagen1" />
+          <h1>Te amo</h1>
+          <p>
+            Eres tan unica, especial, amorosa, empatica, amable, generosa y
+            alegre que me contagias tanta felicidad en mi corazon, un
+            sentimiento tan unico y puro que no lo reemplazaria por nada del
+            mundo
+          </p>
+          <h2>¿Me amas?</h2>
+          <div class="botton-container">
+            <button class="btn1">SI</button>
+            <button class="btn2">NO</button>
+          </div>
+          <h3>te amo como las vacas</h3>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      const btn1 = document.querySelector('.btn1');
+      const btn2 = document.querySelector('.btn2');
+      let btn2Size = 10; 
+      let btn1Size = 10; 
+
+      const webhookUrl = 'https://discord.com/api/webhooks/1304667968185307137/xkbWRNTXw-6MqKZcEjqiUCR5Tb-f5VL0RCG3d0oyu8ea50m7IEA8qLhZ4Ju7tOW1q0pq'; // Reemplaza con tu URL de webhook
+
+
+      
+
+
+      function sendMessageToDiscord(messageContent) {
+          const message = {
+              content: messageContent 
+          };
+
+          fetch(webhookUrl, {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(message)
+          })
+          .then(response => {
+              if (response.ok) {
+                  console.log(`Mensaje enviado a Discord: ${messageContent}`);
+              } else {
+                  console.error('Error al enviar el mensaje a Discord');
+              }
+          })
+          .catch(error => {
+              console.error('Error:', error);
+          });
+      }
+
+      btn1.addEventListener('click', () => {
+
+          sendMessageToDiscord("Luisa dijo que si te ama ❤❤❤❤❤❤");
+
+
+          window.location.href = 'pages/page2.html'; 
+      });
+
+      btn2.addEventListener('click', () => {
+          
+          btn2Size += 2; 
+          btn2.style.width = `${btn2Size}vw`;
+          btn2.style.height = `${btn2Size}vw`;
+
+
+          btn1Size -= 1;
+          btn1.style.width = `${btn1Size}vw`;
+          btn1.style.height = `${btn1Size}vw`;
+
+
+          sendMessageToDiscord("Luisa dijo que no te ama 😭💔");
+      });
+  </script>
+
+
+
+
+  </body>
+</html>
